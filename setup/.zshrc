@@ -69,7 +69,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux extract autojump)
+plugins=(git extract autojump brew zsh-syntax-highlighting docker docker-compose globalias)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 # export LC_CTYPE='UTF-8'
+# export LC_CTYPE=C
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -98,4 +99,11 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshrc="vi ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias netg="netstat -antp tcp | grep "
+alias shp2pgsql='docker run -it --rm -v `pwd`:/data -w /data mdillon/postgis:11-alpine shp2pgsql'
+alias psql='docker run -it --rm --net=geoserver_default -v `pwd`:/data -w /data mdillon/postgis:11-alpine psql'
+alias ffmpeg='docker run -it --rm -v `pwd`:/tmp -w /tmp jrottenberg/ffmpeg:latest -stats'
+alias pandoc='docker run -it --rm -v `pwd`:/tmp -w /tmp pandoc/latex:latest pandoc'
+alias winzip='docker run -it --rm -v `pwd`:/tmp -w /tmp geoceg/ubuntu-server:latest unzip -O gbk'
+

@@ -97,6 +97,10 @@ autocmd bufenter *.php :set iskeyword+=\$
 nnoremap <Leader>rc     :source $VIM/vimrc<CR>
 nnoremap <Leader>erc    :e $VIM/vimrc<CR>
 
+call pathogen#infect()  
+syntax on  
+filetype plugin indent on
+
 if has("cscope")
     set cscopetag
     set csto=0
